@@ -1,0 +1,39 @@
+#sections {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  top: 0px;
+  z-index: 90;
+}
+
+#extra-space {
+  height: 300px;
+}
+
+.step {
+  margin-bottom: 200px;
+}
+
+.highlight {
+  color: #088080;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.vis-title {
+  font-weight: bold;
+  font-size: 70px;
+}
+
+#vis {
+  display: inline-block;
+  position: fixed;
+  top: 60px;
+  z-index: 1;
+  margin-left: 0px;
+  height: 600px;
+  width: 600px;
+  background-color: lightgray;
+}
