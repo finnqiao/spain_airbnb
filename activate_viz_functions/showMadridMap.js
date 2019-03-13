@@ -1,49 +1,70 @@
 function showMadridMap(svg) {
-// Set madrid map and madrid subway to not no show
+  // console.log('show');
+  // Set madrid map and madrid subway to no show
+
+  // Set barca map to not no show
+  svg.select('#barcaVis')
+    .classed('noshow', true);
+
+  // Set madrid map to show
+  svg.select('#madridVis')
+    .classed('noshow', false);
+
+  // Hide title
+  svg.select('#backgroundSection').selectAll('text')
+    .transition()
+    .duration(0)
+    .attr('opacity', 0);
+
+  svg.select('#backgroundSection')
+    .classed('noshow', true);
+
+  // Hide madrid listings / tooltips
+  svg.select('#madridTooltips')
+    .selectAll('marks')
+    .transition().duration(0)
+    .attr('opacity', 0);
+
+  svg.select('#madridTooltips')
+    .classed('noshow', true);
+
+  // Show madrid map
+  var div = d3.select('#tooltipDiv');
+
   svg.select('#madridMap')
     .classed('noshow', false)
 
-  svg.select('#madridSub')
-    .classed('noshow', false)
-
-
-  // Set barca map to no show
-  svg.select('#barcaMap')
-    .classed('noshow', true)
-
-  svg.select('#barcaSub')
-    .classed('noshow', true)
-
-  // Hide barcelona map
-  svg.select('#barcaMap').selectAll('path')
-    .on('mouseenter', null)
-    .on('mouseleave', null)
-    .transition().duration(0)
-    .attr('opacity', 0);
-
-  // Hide barcelona subway
-  svg.select('#barcaSub').selectAll('path')
-    .transition().duration(0)
-    .attr('opacity', 0);
-
-  // Hide madrid subway
-  svg.select('#madridSub').selectAll('path')
-    .transition().duration(0)
-    .attr('opacity', 0);
-
-  // Show madrid map
   svg.select('#madridMap').selectAll('path')
-    .on('mouseenter', function() {
+    .on('click',  null)
+    .on('mouseenter', function(d) {
       d3.select(this)
         .attr('opacity', .6);
+
+      div.style('width', '120px');
+
+      div.transition()
+        .duration(200)
+        .style('opacity', .9);
+
+      div.html('<b>Neighborhood:</b><br/>' +
+        d.neighbourhood + '<br/>')
+        .style('left', (d3.event.pageX) + 'px')
+        .style('top', (d3.event.pageY) + 'px');
     })
     .on('mouseleave', function() {
       d3.select(this)
         .attr('opacity', 1);
+
+      div.transition()
+        .duration(500)
+        .style('opacity', 0);
     })
+    .transition().duration(0)
+    .attr('fill', '#00838f')
+    .attr('d', svg.madPath)
     .transition().duration(800)
     .delay(function(d,i){
-      return i*4;
+      return i*5;
     })
-    .attr('opacity', 1)
+    .attr('opacity', 1);
 }

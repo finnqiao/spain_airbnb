@@ -2,11 +2,8 @@ function showBarcaMap(svg) {
   // console.log('show');
   // Set madrid map and madrid subway to no show
   // Need to change when I change Madrid
-  svg.select('#madridMap')
-    .classed('noshow', true)
-
-  svg.select('#madridSub')
-    .classed('noshow', true)
+  svg.select('#madridVis')
+    .classed('noshow', true);
 
   // Set barca map to not no show
   svg.select('#barcaVis')

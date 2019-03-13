@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Scrolling Sections</title>
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+    </head>
+  <body>
+    <div class="container">
+      <div id='graphic'>
+        <div id='sections'>
+          <section class="step">
+            <div class="title">Initial Title</div>
+            Go go data vis
+          </section>
+          <section class="step">
+            <div class="title">A different title</div>
+            Testing scrolling
+          </section>
+          <section class="step">
+            <div class="title">Display some number</div>
+            This number means something
+          </section>
+          <section class="step">
+            <div class="title">Bar graph</div>
+            Now it's a bar graph
+          </section>
+          <section class="step">
+            <div class="title">Trying circles</div>
+            This will look cool if it works
+          </section>
+        </div>
+        <div id='vis'>
+        </div>
+        <div id="extra-space">
+        </div>
+        <div id="extra-space"></div>
+      </div>
+    </div>
+    <script src="./js/activate.js"></script>
+    <script src="./js/dataImport.js"></script>
+    <script src="./js/display.js"></script>
+    <script src="./js/scrollVis.js"></script>
+    <script src="./js/scroller.js"></script>
+  </body>
+</html>

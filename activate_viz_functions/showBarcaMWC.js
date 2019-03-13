@@ -78,7 +78,7 @@ function showBarcaMWC(svg) {
     .attr('height',iconHeight);
 
   // Show mwc slider
-  updateCircles(svg.mwc2018, price_flag_color, new Date(2018, 1, 25), '18', svg);
+  updateCircles(svg.mwc2018, price_flag_color, new Date(2018, 1, 25), '18', 'barcelona', svg);
 
   svg.select('#barcaSlider1')
     .classed('noshow', false);

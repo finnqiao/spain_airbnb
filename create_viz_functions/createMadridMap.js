@@ -3,16 +3,23 @@ function scaleMap(height, origHeight, origScale) {
 }
 
 function createMadridMap(madrid, svg) {
-  var madCenter = d3.geoCentroid(madrid)
 
-  // // create the path
+  var madCenter = d3.geoCentroid(madrid);
 
-  var origMadridScale = 115000;
+  // // create the madrid path
+
+  var origMadridScale = 120000;
+  var origMadridScaleZoom = 380000;
   var madridScale = scaleMap(height, origHeight, origMadridScale);
+  var madridScaleZoom = scaleMap(height, origHeight, origMadridScaleZoom);
 
-  var madProjection = d3.geoMercator().center(madCenter)
-    .scale(madridScale).translate([(width * .5), (height * .52)]);
-  var madPath = d3.geoPath().projection(madProjection);
+  var madProj = d3.geoMercator().center(madCenter)
+    .scale(madridScale).translate([(width * .52), (height * .5)]);
+  madPath = d3.geoPath().projection(madProj);
+
+  var madProjZoom = d3.geoMercator().center(madCenter)
+    .scale(madridScaleZoom).translate([(width * .4), (height * .25)]);
+  madPathZoom = d3.geoPath().projection(madProjZoom);
 
   mad_list = [];
 
@@ -20,22 +27,29 @@ function createMadridMap(madrid, svg) {
     d.neighbourhood = d.properties.neighbourhood;
     d.neighbourhood_group = d.properties.neighbourhood_group;
     mad_list.push(d.neighbourhood);
-  });
+  })
 
   svg.append('g')
+    .attr('id', 'madridVis')
+    .append('g')
     .attr('id', 'madridMap')
     .selectAll('path').data(madrid.features)
     .enter()
     .append('path')
     .attr('d', madPath)
-    .attr('fill', '#00838f')
+    .attr('fill', '#00b8d4')
     .attr('stroke-width', '1')
     .attr('stroke', '#00b8d4')
-    // .on('click', d => console.log(d.neighbourhood_group));
+    .on('click', null)
     .attr('opacity', 0);
 
-  return {
-    path: madPath,
-    projection: madProjection
-  };
+  svg.select('#madridMap')
+    .classed('noshow', true)
+
+    return {
+      path: madPath,
+      pathZoom: madPathZoom,
+      projection: madProj,
+      projectionZoom: madProjZoom
+    };
 }

@@ -66,6 +66,7 @@ body {
   height: 1000;
   width: 800;
   /* border: 2px solid limegreen; */
+  padding-left: 100px;
 }
 
 #spainHeader {
@@ -579,14 +580,84 @@ path.cls-1 {
         Shows the barcelona subway over sonar
       </section>
       <section class='step' id='madridTop'>
-        <div class='sectionTitle'>Madrid Map</div>
+        <div class='sectionTitle'>Madrid</div>
         <br></br>
-        Shows the base madrid map
+        There are 128 unique neighborhoods in Madrid, each with a unique feel, culture, and history. The most populous, and popular for tourists, tend to be closer to the center of the city.
+        <br></br>Stats about AirBNB in Madrid:<br></br>
+        <ul>
+          <li>64.7% entire homes/apartments</li>
+          <li>Avg price €92/night</li>
+          <li>High availability (59%) of listings</li>
+          <li>55.3% of hosts have multiple listings</li>
+        </ul>
       </section>
       <section class='step'>
-          <div class='sectionTitle'>Madrid Mass Transit</div>
-          <br></br>
-          Shows the madrid subway
+        <div class='sectionTitle'>madrid Map Zoom</div>
+        Zooms into the madrid map
+        </section>
+      <section class='step'>
+        <div class='sectionTitle'>Listings in Madrid</div>
+        <br></br>
+        Take a look at a couple of interesting listings in Madrid. The city boasts a large offering of selections in all price ranges and neighborhoods, and some with amazing views.
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Madrid Landmarks</div>
+        <br></br>
+        Madrid, as the capital of Spain, is filled with many historic sites and national attractions. Notable landmarks include: <br></br>
+        <ul>
+        <li>The Royal Palace of Madrid, the home of the Spanish royal family within the city, is located near the center of the city and is an excellent example of Baroque architecture.</li>
+        <li>The Museo Nacional del Prado is one of the premier art museums in the world. It features a plethora of works from the 12th to 20th centuries. Some notable acquisitions are Las Meninas by Diego Velázquez, The Garden of Earthly Delights by Hieronymous Bosch, and Third of May 1808 by Francisco Goya.</li>
+        <li>Santiago Bernabéu Stadium, a stadium in northern Madrid, is home to Real Madrid Club de Fútbol. In addition to the large draw it has for all Real Madrid matches, it is also host to many larger tournaments and events.</li>
+        </ul>
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Average Prices Across Madrid</div>
+        <br></br>
+        Madrid has a very popular and energetic city center. Its most expensive neighborhoods center around the large central park, Parque del Buen Retiro, the main train station, Puerta de Atocha, and various markets, museums, and entertainment districts downtown. AirBNB prices tend to decrease with increasing distance from the city center. <br></br>
+        Madrid’s most expensive neighborhoods for AirBNB rentals are:<br></br>
+        <ul>
+        <li>Recoletos</li>
+        <li>Moscardó</li>
+        <li>Pilar</li>
+        <li>Niño Jesús</li>
+        <li>El Plantío</li>
+        </ul>
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Madrid Events</div>
+        <br></br>
+        El Clasico is the name for the match between Barcelona and Real Madrid. There was a match on March 2 that was scheduled in advance so we looked at the data around that game. This game was at the Santiago Bernabeu stadium, home of Real Madrid. <br></br>
+        The UEFA Champions League Final crowns the champion of the most competitive soccer tournament in Europe and is held in a different city every year. In 2019 it is hosted at the Wanda Metropolitano Stadium, the new home of Club Atlético de Madrid.
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Average Prices Around el Clasico</div>
+        <br></br>
+        madrid Polar Chart 1
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Available Listings and Average Prices Across Neighborhoods</div>
+        <br></br>
+        madrid MWC
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Madrid Metro</div>
+        <br></br>
+        madrid Sub
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Average Prices Around Champions League Final</div>
+        <br></br>
+        madrid Polar Chart 2
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Available Listings and Average Prices Across Neighborhoods</div>
+        <br></br>
+        madrid Sonar Festival
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Madrid Metro</div>
+        <br></br>
+        Shows the madrid subway over sonar
       </section>
     </div>
     <div id='vis'></div>
@@ -608,12 +679,20 @@ path.cls-1 {
 <script src='create_viz_functions/createBarcaPolarChart2.js'></script>
 <script src='create_viz_functions/createBarcaSub.js'></script>
 <script src='create_viz_functions/createMadridMap.js'></script>
+<script src='create_viz_functions/createMadridCircles.js'></script>
+<script src='create_viz_functions/createMadridTooltips.js'></script>
+<script src='create_viz_functions/createMadridLandmarks.js'></script>
+<script src='create_viz_functions/createMadridEvents.js'></script>
+<script src='create_viz_functions/createMadridPolarChart1.js'></script>
+<script src='create_viz_functions/createMadridSlider1.js'></script>
 <script src='create_viz_functions/createMadridSub.js'></script>
+<script src='create_viz_functions/createMadridPolarChart2.js'></script>
+<script src='create_viz_functions/createMadridSlider2.js'></script>
+
 <script src='activate_viz_functions/showBackground.js'></script>
 <script src='activate_viz_functions/showBarcaMap.js'></script>
 <script src='activate_viz_functions/showBarcaHeatmap.js'></script>
 <script src='activate_viz_functions/showBarcaTooltips.js'></script>
-<!-- <script src='activate_viz_functions/showBarcaCircles.js'></script> -->
 <script src='activate_viz_functions/showBarcaSlider.js'></script>
 <script src='activate_viz_functions/showBarcaLandmarks.js'></script>
 <script src='activate_viz_functions/showBarcaEvents.js'></script>
@@ -624,7 +703,17 @@ path.cls-1 {
 <script src='activate_viz_functions/showBarcaSub1.js'></script>
 <script src='activate_viz_functions/showBarcaSub2.js'></script>
 <script src='activate_viz_functions/showMadridMap.js'></script>
-<script src='activate_viz_functions/showMadridSub.js'></script>
+<script src='activate_viz_functions/showMadridMapZoom.js'></script>
+<script src='activate_viz_functions/showMadridTooltips.js'></script>
+<script src='activate_viz_functions/showMadridLandmarks.js'></script>
+<script src='activate_viz_functions/showMadridHeatmap.js'></script>
+<script src='activate_viz_functions/showMadridEvents.js'></script>
+<script src='activate_viz_functions/showMadridPolarChart1.js'></script>
+<script src='activate_viz_functions/showMadridClasico.js'></script>
+<script src='activate_viz_functions/showMadridSub1.js'></script>
+<script src='activate_viz_functions/showMadridPolarChart2.js'></script>
+<script src='activate_viz_functions/showMadridCLF.js'></script>
+<script src='activate_viz_functions/showMadridSub2.js'></script>
 <script>
 
 $(document).ready(function() {
@@ -651,7 +740,17 @@ $(document).ready(function() {
     activateFunctions[10] = showBarcaSonar;
     activateFunctions[11] = showBarcaSub2;
     activateFunctions[12] = showMadridMap;
-    activateFunctions[13] = showMadridSub;
+    activateFunctions[13] = showMadridMapZoom;
+    activateFunctions[14] = showMadridTooltips;
+    activateFunctions[15] = showMadridLandmarks;
+    activateFunctions[16] = showMadridHeatmap;
+    activateFunctions[17] = showMadridEvents;
+    activateFunctions[18] = showMadridPolarChart1;
+    activateFunctions[19] = showMadridClasico;
+    activateFunctions[20] = showMadridSub1;
+    activateFunctions[21] = showMadridPolarChart2;
+    activateFunctions[22] = showMadridCLF;
+    activateFunctions[23] = showMadridSub2;
 
     // updateFunctions are called while
     // in a particular section to update
@@ -735,6 +834,7 @@ $(document).ready(function() {
     .defer(d3.json, 'barcelona_neighborhoods_elliot.geojson')
     .defer(d3.json, 'mad_neighbourhoods.geojson')
     .defer(d3.csv, 'main_data/barcelonaNeighborhoodMeans.csv')
+    .defer(d3.csv, 'main_data/madridNeighborhoodMeans.csv')
     .defer(d3.json, 'barcelona_L135.geojson')
     .defer(d3.json, 'madrid_filtered.geojson')
     .defer(d3.csv, 'main_data/bar_mwc_2018.csv')
@@ -750,7 +850,7 @@ $(document).ready(function() {
 
   // callback
 
-  function ready(error, barcelona, madrid, testNums, barSubway,
+  function ready(error, barcelona, madrid, barMeans, madMeans, barSubway,
     madSubway, mwc2018, sonar2018, bar_labels, landmarks, mad_labels, clf2019,
     clasico2019, tooltips, events){
 
@@ -802,6 +902,7 @@ $(document).ready(function() {
       d.avg_price = +d.Price || 0;
       d.tag = d.tag;
       d.code = madCodeLookup.get(d.neighbourhood)['code'];
+      d.Day = new Date(d.Date);
     });
 
     clasico2019.forEach(d => {
@@ -812,6 +913,7 @@ $(document).ready(function() {
       d.avg_price = +d.Price || 0;
       d.tag = d.tag;
       d.code = madCodeLookup.get(d.neighbourhood)['code'];
+      d.Day = new Date(d.Date);
     });
 
     svg.mwc2018 = mwc2018;
@@ -856,9 +958,9 @@ $(document).ready(function() {
     var barEvents = events.filter(function(d) { return d.city == 'Barcelona'});
     var madEvents = events.filter(function(d) { return d.city == 'Madrid'});
 
-    // console.log(testNums);
-    svg.testLookup = d3.map(testNums, d => d.code);
-    console.log(svg.testLookup);
+    svg.barLookup = d3.map(barMeans, d => d.code);
+    svg.madLookup = d3.map(madMeans, d => d.code);
+    // console.log(svg.testLookup);
 
     createBackground(svg);
 
@@ -898,10 +1000,39 @@ $(document).ready(function() {
     // map madrid
     var madRtn = createMadridMap(madrid, svg);
     var madPath = madRtn.path;
+    var madPathZoom = madRtn.pathZoom;
     var madProj = madRtn.projection;
+    var madProjZoom = madRtn.projectionZoom;
+
+    svg.madPath = madPath;
+    svg.madPathZoom = madPathZoom;
+    svg.madProj = madProj;
+    svg.madProjZoom = madProjZoom;
+
+    // create madrid price circles
+    // Time
+    var dataTime = d3.timeDays(new Date(2018, 1, 24), new Date(2018, 2, 3));
+    createMadridCircles(madrid, madPathZoom, clasico2019, price_flag_color, formatDate(d3.min(dataTime)), '18', svg);
+
+    // create tooltips
+    createMadridTooltips(madTooltips, madProjZoom, svg);
+
+    // Create madrid landmarks
+    createMadridLandmarks(madLandmarks, madProjZoom, svg);
+
+    // Create madrid event tooltips
+    createMadridEvents(madEvents, madProjZoom, svg);
+
+    // Create barca polar charts
+    createMadridPolarChart1(clasico2019, width, height, svg);
+    createMadridPolarChart2(clf2019, width, height, svg);
+
+    // Create barcelona slider
+    createMadridSlider1(clasico2019, price_flag_color, svg);
+    createMadridSlider2(clf2019, price_flag_color, svg);
 
     // Map madrid subway
-    createMadridSubway(madSubway, madPath, svg);
+    createMadridSub(madSubway, madPathZoom, svg);
 
     // setup scroll functionality
     var scroll = scroller()

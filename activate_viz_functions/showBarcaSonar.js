@@ -78,7 +78,7 @@ function showBarcaSonar(svg) {
     .attr('height',iconHeight);
 
   // Show sonar slider
-  updateCircles(svg.sonar2018, price_flag_color, new Date(2018, 5, 15), '18', svg);
+  updateCircles(svg.sonar2018, price_flag_color, new Date(2018, 5, 15), '18', 'barcelona', svg);
 
   svg.select('#barcaSlider2')
     .classed('noshow', false);

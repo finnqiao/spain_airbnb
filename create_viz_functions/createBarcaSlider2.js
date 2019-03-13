@@ -1,30 +1,6 @@
 
 function createBarcaSlider2(data, price_flag_color, svg) {
   
-  function update(date, year) {
-    date_key = new Date(date + "/" + year);
-    date_lookup = d3.map(data.filter(d => new Date(d.date).getTime() == date_key.getTime()), d => d.code);
-
-    var price_circles = svg.select('#barcaCircles')
-      .selectAll('.centroid');
-  
-    price_circles
-      .transition()
-      .duration(0)
-      .attr('r', d => {
-        if (date_lookup.get(d[1])){
-          var listings = date_lookup.get(d[1])['num_listing'];
-        var avail = date_lookup.get(d[1])['available'];
-        return Math.sqrt(listings * avail) * (height / origHeight);
-        }
-      })
-      .attr('fill', d => {
-        if (date_lookup.get(d[1])){
-          var value = date_lookup.get(d[1])['avg_price'];
-          return (price_flag_color(value));
-        }
-      })
-  }
 
   var formatDate = d3.timeFormat('%m/%d');
   // var min_date = new Date(d3.min(data, d=>d.date));
@@ -33,10 +9,6 @@ function createBarcaSlider2(data, price_flag_color, svg) {
   var max_date = new Date(2018, 5, 22);
 
   var data_time = d3.timeDays(min_date, max_date);
-
-  // test date slider for MWC
-
-  // update(new Date(2018, 5, 16), '18');
 
   var sliderTime = d3
     .sliderBottom()
@@ -49,7 +21,7 @@ function createBarcaSlider2(data, price_flag_color, svg) {
     .default(new Date(2018, 5, 16))
     .on('onchange', val => {
       d3.select('p#value-time').text(d3.timeFormat('%m/%d')(val));
-      updateCircles(data, price_flag_color, formatDate(val), '18', svg)
+      updateCircles(data, price_flag_color, formatDate(val), '18', 'barcelona', svg)
     });
 
   var gTime = svg.select('#barcaVis')

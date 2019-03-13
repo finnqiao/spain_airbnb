@@ -37,8 +37,12 @@ function showBarcaHeatmap(svg) {
   svg.select('#barcaMap').selectAll('path')
     .on('click',  null)
     .on('mouseenter', function(d) {
-      // console.log(svg.testLookup.get(d.code));
-      var value = Math.round(svg.testLookup.get(d.code)['Price'] * 100) / 100;
+      var value;
+      if (svg.barLookup.get(d.code)) {
+        value = value = Math.round(svg.barLookup.get(d.code)['Price'] * 100) / 100;
+      } else {
+        value = 0;
+      }
       d3.select(this)
         .attr('opacity', .6);
 
@@ -70,8 +74,8 @@ function showBarcaHeatmap(svg) {
     })
     .attr('fill', function(d) {
       var value;
-      if (svg.testLookup.get(d.code)) {
-        value = svg.testLookup.get(d.code)['Price'];
+      if (svg.barLookup.get(d.code)) {
+        value = svg.barLookup.get(d.code)['Price'];
       } else {
         value = 0;
       }

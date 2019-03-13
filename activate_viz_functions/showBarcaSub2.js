@@ -13,6 +13,10 @@ function showBarcaSub2(svg) {
   svg.select('#madridVis')
     .classed('noshow', true);
 
+  // Show barca visuals
+  svg.select('#barcaVis')
+    .classed('noshow', false);
+
   // Show barca map
   var div = d3.select('#tooltipDiv');
 

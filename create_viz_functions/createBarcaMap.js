@@ -3,7 +3,6 @@ function scaleMap(height, origHeight, origScale) {
 }
 
 function createBarcaMap(barcelona, svg) {
-  console.log('create');
 
   var barCenter = d3.geoCentroid(barcelona);
 
