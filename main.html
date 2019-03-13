@@ -43,10 +43,12 @@ body {
   /* This spaces the text on the left side */
   /* margin-bottom: 400px; */
 
-  color: white;
+  color: rgb(208, 208, 208);
   font-weight: normal;
   font-size: 14px;
   opacity: 0;
+  padding: 15px;
+  line-height: 23px;
 }
 
 #sections .step .sectionTitle {
@@ -181,6 +183,9 @@ nav ul {
   padding: 10px 32px;
   color: rgb(208, 208, 208);
   font-size: 24px;
+  text-shadow: 1px 1px rgba(255, 112, 112, 0.49);
+  /* background-image: url(images/spain.png);
+  background-size: auto; */
 }
 
 nav ul li {
@@ -206,11 +211,11 @@ nav ul li a:hover {
 }
 
 /* path {
-  /* stroke: #58aaed; */
+  stroke: #58aaed;
   stroke-width: 1px;
   stroke-linejoin: round;
   filter: brightness(1);
-  /* fill: #53B8ED; */
+  fill: #53B8ED;
 } */
 
 path.cls-1 {
@@ -487,51 +492,100 @@ path.cls-1 {
         <!-- Do We need a title? -->
       </section>
       <section class='step' id='barcaTop'>
-        <div class='sectionTitle'>Barcelona Map</div>
-        Shows the base barcelona map
+        <div class='sectionTitle'>Barcelona</div>
+        <br></br>
+        There are 73 unique neighborhoods in Barcelona, each with a unique feel, culture, and history.<br></br>
+        The most populous, and popular for tourists, tend to be closer to the center of the city.<br></br>
+        Stats about AirBNB in Barcelona:<br></br>
+        <ul>
+          <li>46.1% entire homes/apartments</li>
+          <li>Avg price €103/night</li>
+          <li>High availability (65.3%) of listings/li>
+          <li>62.4% of hosts have multiple listings</li>
+        </ul>
+        <!-- &nbsp;&nbsp;-&nbsp;46.1% entire homes/apartments<br></br>
+        &nbsp;&nbsp;-&nbsp;Avg price €103/night<br></br>
+        &nbsp;&nbsp;-&nbsp;High availability (65.3%) of listings<br></br>
+        &nbsp;&nbsp;-&nbsp;62.4% of hosts have multiple listings -->
       </section>
       <section class='step'>
-        <div class='sectionTitle'>Barcelona Heatmap</div>
-        Heatmap of airbnb for all neighborhoods
-      </section>
-      <section class='step'>
-        <div class='sectionTitle'>Barcelona Tooltips</div>
-        Tooltips for top 10 airbnb listings for all neighborhoods
-      </section>
-      <section class='step'>
-        <div class='sectionTitle'>Barcelona Circles</div>
-        Barcelona Circles
-      </section>
-      <section class='step'>
-        <div class='sectionTitle'>Barcelona Slider</div>
-        Barcelona Slider
+        <div class='sectionTitle'>Listings in Barcelona</div>
+        <br></br>
+        Take a look at a couple of interesting listings in Barcelona. The city boasts a large offering of selections in all price ranges and neighborhoods, and some with amazing views of the city, beach, and mountains.
       </section>
       <section class='step'>
         <div class='sectionTitle'>Barcelona Landmarks</div>
-        Barcelona Landmarks
+        <br></br>
+        Barcelona is a city marked by a rich history and unique culture. Notable landmarks include: <br></br>
+        <ul>
+          <li>La Sagrada Familia, Antoni Gaudi’s premiere cathedral, which has been under construction since 1882 and is scheduled to be completed in 2032.</li>
+          <li>La Rambla, a street in central Barcelona, filled with music, restaurants, shops, and arts. It is located near the Gothic Quarter, the beach, and the neighborhood of El Raval, which hosts some of Gaudi’s more notable architectural works. </li>
+          <li>The Camp Nou stadium is home to FC Barcelona and is the third largest stadium in Europe, with a capacity of 99,354 people. It is a popular venue for sporting events and concerts.</li>
+        </ul>
       </section>
       <section class='step'>
-        <div class='sectionTitle'>Barcelona Events</div>
-        Barcelona Events
+        <div class='sectionTitle'>Average Prices Across Barcelona</div>
+        <br></br>
+        The most expensive neighborhoods for renting AirBNBs in Barcelona tend to be near the city center and in close proximity to the beach and other popular destinations. <br></br>Average listing price tends to decrease as distance from the center of the city increases; the least expensive listings are located out in the hills and away from the water. <br></br>
+        Top 5 most expensive neighborhoods are: <br></br>
+        <ul>
+          <li>la Maternitat i Sant Ramon</li>
+          <li>Diagonal Mar i el Front Marítim del Poblenou</li>
+          <li>la Vila Olímpica del Poblenou</li>
+          <li>Sant Gervasi - Galvany</li>
+          <li>la Dreta de l'Eixample</li>
+        </ul>
       </section>
       <section class='step'>
-        <div class='sectionTitle'>Barcelona Polar Chart</div>
-        Barcelona Polar Chart
+        <div class='sectionTitle'>Events in Barcelona</div>
+        <br></br>
+        Mobile World Congress is the world's largest exhibition for the mobile industry, boasting approximately 100,000 attendees from all over the world. It is held at the Fira Gran Via in Southwest Barcelona. <br></br>
+        Sonar is an electronic music festival held in Barcelona every year since 1994, growing to draw upwards of 120,000 attendees in recent years. The 2018 lineup included Diplo, the Gorillaz and LCD Soundsystem
       </section>
       <section class='step'>
-        <div class='sectionTitle'>2nd Barcelona Polar Chart</div>
-        2nd Barcelona Polar Chart
+        <div class='sectionTitle'>Average Prices Around Mobile World Congress</div>
+        <br></br>
+        The expansion of the slices indicates a major increase in price for the days during and surrounding the Mobile World Congress.<br></br>
+        As we compare the first and last days displayed (Feb 1 and Mar 31), we see an increase that seems to come with a change in the season and an increase in tourism as the weather grows warmer.<br></br>
+        We also can see periodic increases in price for Fridays and Saturdays.
       </section>
       <section class='step'>
-        <div class='sectionTitle'>Barcelona Mass Transit</div>
-        Shows the barcelona subway
+        <div class='sectionTitle'>Available Listings and Average Prices Across Neighborhoods</div>
+        <br></br>
+        Starting x days before, we can see the bubbles grow smaller, indicating fewer available listings as we draw closer to the event, while prices go up across the city, particularly in neighborhoods X, Y and Z.
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Barcelona Metro</div>
+        <br></br>
+        Here is where adding a layer may help a traveler to make a better decision about where to stay. If we overlay the subway lines in Barcelona, we can see which neighborhoods might still be priced reasonably, while being located along a subway line that could take them to the event and back.
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Average Prices Around Sonar</div>
+        <br></br>
+        June is a particularly busy month in Barcelona. We see major spikes on all weekends over the month of June.<br></br>
+        To start the month, there was a major indie rock festival called Primavera Sound.<br></br>
+        In this middle of the month, we see the activity bump from Sonar.<br></br>
+        One week later, there is a major cultural festival called the Nit de Sant Joan, which celebrates the longest day of the year.<br></br>
+        To end the month, we see activity relating to Barcelona’s Pride parade.
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Barcelona Sonar Festival</div>
+        <br></br>
+        Barcelona Sonar Festival
+      </section>
+      <section class='step'>
+        <div class='sectionTitle'>Barcelona Metro</div>
+        <br></br>
+        Shows the barcelona subway over sonar
       </section>
       <section class='step' id='madridTop'>
         <div class='sectionTitle'>Madrid Map</div>
+        <br></br>
         Shows the base madrid map
       </section>
       <section class='step'>
           <div class='sectionTitle'>Madrid Mass Transit</div>
+          <br></br>
           Shows the madrid subway
       </section>
     </div>
@@ -541,11 +595,13 @@ path.cls-1 {
 
 <script src='./headerScroll.js'></script>
 <script src='Scrolling/js/scrollerV4.js'></script>
-<script src='create_viz_functions/createTitle.js'></script>
+<script src='./updateCircles.js'></script>
+<script src='create_viz_functions/createBackground.js'></script>
 <script src='create_viz_functions/createBarcaMap.js'></script>
 <script src='create_viz_functions/createBarcaTooltips.js'></script>
 <script src='create_viz_functions/createBarcaCircles.js'></script>
-<script src='create_viz_functions/createBarcaSlider.js'></script>
+<script src='create_viz_functions/createBarcaSlider1.js'></script>
+<script src='create_viz_functions/createBarcaSlider2.js'></script>
 <script src='create_viz_functions/createBarcaLandmarks.js'></script>
 <script src='create_viz_functions/createBarcaEvents.js'></script>
 <script src='create_viz_functions/createBarcaPolarChart1.js'></script>
@@ -553,17 +609,20 @@ path.cls-1 {
 <script src='create_viz_functions/createBarcaSub.js'></script>
 <script src='create_viz_functions/createMadridMap.js'></script>
 <script src='create_viz_functions/createMadridSub.js'></script>
-<script src='activate_viz_functions/showTitle.js'></script>
+<script src='activate_viz_functions/showBackground.js'></script>
 <script src='activate_viz_functions/showBarcaMap.js'></script>
 <script src='activate_viz_functions/showBarcaHeatmap.js'></script>
 <script src='activate_viz_functions/showBarcaTooltips.js'></script>
-<script src='activate_viz_functions/showBarcaCircles.js'></script>
+<!-- <script src='activate_viz_functions/showBarcaCircles.js'></script> -->
 <script src='activate_viz_functions/showBarcaSlider.js'></script>
 <script src='activate_viz_functions/showBarcaLandmarks.js'></script>
 <script src='activate_viz_functions/showBarcaEvents.js'></script>
+<script src='activate_viz_functions/showBarcaMWC.js'></script>
+<script src='activate_viz_functions/showBarcaSonar.js'></script>
 <script src='activate_viz_functions/showBarcaPolarChart1.js'></script>
 <script src='activate_viz_functions/showBarcaPolarChart2.js'></script>
-<script src='activate_viz_functions/showBarcaSub.js'></script>
+<script src='activate_viz_functions/showBarcaSub1.js'></script>
+<script src='activate_viz_functions/showBarcaSub2.js'></script>
 <script src='activate_viz_functions/showMadridMap.js'></script>
 <script src='activate_viz_functions/showMadridSub.js'></script>
 <script>
@@ -579,19 +638,20 @@ $(document).ready(function() {
     // activateFunctions are called each time the
     // active section changes
 
-    activateFunctions[0] = showTitle;
+    activateFunctions[0] = showBackground;
     activateFunctions[1] = showBarcaMap;
-    activateFunctions[2] = showBarcaHeatmap;
-    activateFunctions[3] = showBarcaTooltips;
-    activateFunctions[4] = showBarcaCircles;
-    activateFunctions[5] = showBarcaSlider;
-    activateFunctions[6] = showBarcaLandmarks;
-    activateFunctions[7] = showBarcaEvents;
-    activateFunctions[8] = showBarcaPolarChart1;
+    activateFunctions[2] = showBarcaTooltips;
+    activateFunctions[3] = showBarcaLandmarks;
+    activateFunctions[4] = showBarcaHeatmap;
+    activateFunctions[5] = showBarcaEvents;
+    activateFunctions[6] = showBarcaPolarChart1;
+    activateFunctions[7] = showBarcaMWC;
+    activateFunctions[8] = showBarcaSub1;
     activateFunctions[9] = showBarcaPolarChart2;
-    activateFunctions[10] = showBarcaSub;
-    activateFunctions[11] = showMadridMap;
-    activateFunctions[12] = showMadridSub;
+    activateFunctions[10] = showBarcaSonar;
+    activateFunctions[11] = showBarcaSub2;
+    activateFunctions[12] = showMadridMap;
+    activateFunctions[13] = showMadridSub;
 
     // updateFunctions are called while
     // in a particular section to update
@@ -606,7 +666,7 @@ $(document).ready(function() {
 
   // color mapping
   var price_flag_domain = [100, 200, 3000];
-  var price_flag_color = d3.scaleThreshold()
+  price_flag_color = d3.scaleThreshold()
     .domain(price_flag_domain)
     .range([d3.rgb('rgb(135, 190, 223)'),d3.rgb('rgb(255, 255, 255)'),d3.rgb('rgb(255, 0, 0)')]);
 
@@ -674,7 +734,7 @@ $(document).ready(function() {
   d3.queue()
     .defer(d3.json, 'barcelona_neighborhoods_elliot.geojson')
     .defer(d3.json, 'mad_neighbourhoods.geojson')
-    .defer(d3.csv, 'test_bar_data.csv')
+    .defer(d3.csv, 'main_data/barcelonaNeighborhoodMeans.csv')
     .defer(d3.json, 'barcelona_L135.geojson')
     .defer(d3.json, 'madrid_filtered.geojson')
     .defer(d3.csv, 'main_data/bar_mwc_2018.csv')
@@ -754,6 +814,11 @@ $(document).ready(function() {
       d.code = madCodeLookup.get(d.neighbourhood)['code'];
     });
 
+    svg.mwc2018 = mwc2018;
+    svg.sonar2018 = sonar2018;
+    svg.clasico2019 = clasico2019;
+    svg.clf2019 = clf2019;
+
     landmarks.forEach(d => {
       d.city = d.City;
       d.lat = +d.Latitude;
@@ -792,9 +857,10 @@ $(document).ready(function() {
     var madEvents = events.filter(function(d) { return d.city == 'Madrid'});
 
     // console.log(testNums);
-    svg.testLookup = d3.map(testNums, d => d.neighbourhood);
+    svg.testLookup = d3.map(testNums, d => d.code);
+    console.log(svg.testLookup);
 
-    createTitle(svg);
+    createBackground(svg);
 
     // map barcelona
     var barRtn = createBarcaMap(barcelona, svg);
@@ -810,7 +876,8 @@ $(document).ready(function() {
     createBarcaCircles(barcelona, barPath, mwc2018, price_flag_color, formatDate(d3.min(dataTime)), '18', svg);
 
     // Create barcelona slider
-    createBarcaSlider(mwc2018, price_flag_color, svg);
+    createBarcaSlider1(mwc2018, price_flag_color, svg);
+    createBarcaSlider2(sonar2018, price_flag_color, svg);
 
     // Create barcelona landmarks
     createBarcaLandmarks(barLandmarks, barProj, svg);
