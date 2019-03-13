@@ -55,10 +55,10 @@ function showBarcaEvents(svg) {
     .on('mouseleave', null)
     .attr('opacity',0);
 
-  svg.selectAll('.label_text,.chart_labels,.polar_chart1')
-    .transition()
-    .duration(0)
-    .attr('opacity', 0);
+  // svg.selectAll('.label_text,.chart_labels,.polar_chart1')
+  //   .transition()
+  //   .duration(0)
+  //   .attr('opacity', 0);
 
   svg.select('#barcaPolarChart1')
     .classed('noshow', true);

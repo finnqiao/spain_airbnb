@@ -4,6 +4,12 @@ function showMadridLandmarks(svg) {
 
   var div = d3.select('#tooltipDiv');
 
+  svg.select('#madridMap')
+      .selectAll('Path')
+      .transition()
+      .duration(0)
+      .attr('d', svg.madPathZoom);
+
   // Hide tooltips/listings
   svg.select('#madridTooltips')
     .selectAll('.mark')

@@ -100,7 +100,7 @@ function createBarcaPolarChart1(barPolarChart, width, height, svg) {
       .attr('id','Start')
       .style('text-anchor','start')
       .attr('startOffset', '0.25%')
-      .attr('opacity',0)
+      .attr('opacity',1)
       .text(formatDate(start));
 
     polarChart.append('text')
@@ -110,7 +110,7 @@ function createBarcaPolarChart1(barPolarChart, width, height, svg) {
       .attr('id','Quad1')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '25%')
-      .attr('opacity',0)
+      .attr('opacity',1)
       .text(formatDateShort(new Date((end.getTime()-start.getTime())/4 + start.getTime())));
 
     polarChart.append('text')
@@ -120,7 +120,7 @@ function createBarcaPolarChart1(barPolarChart, width, height, svg) {
       .attr('id','Quad2')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '50%')
-      .attr('opacity',0)
+      .attr('opacity',1)
       .text(formatDateShort(new Date((end.getTime()-start.getTime())/2 + start.getTime())));
 
     polarChart.append('text')
@@ -130,7 +130,7 @@ function createBarcaPolarChart1(barPolarChart, width, height, svg) {
       .attr('id','Quad3')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '75%')
-      .attr('opacity',0)
+      .attr('opacity',1)
       .text(formatDateShort(new Date(3*(end.getTime()-start.getTime())/4 + start.getTime())));
 
     polarChart.append('text')
@@ -140,7 +140,7 @@ function createBarcaPolarChart1(barPolarChart, width, height, svg) {
       .attr('id','End')
       .style('text-anchor','end')
       .attr('startOffset', '99.75%')
-      .attr('opacity',0)
+      .attr('opacity',1)
       .text(formatDateShort(end));
   }
 

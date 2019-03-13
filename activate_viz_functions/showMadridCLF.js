@@ -7,10 +7,10 @@ function showMadridCLF(svg) {
     .on('mouseleave', null)
     .attr('opacity',0);
 
-  svg.selectAll('.label_text,.chart_labels,.polar_chartMad2')
-    .transition()
-    .duration(0)
-    .attr('opacity', 0);
+  // svg.selectAll('.label_text,.chart_labels,.polar_chartMad2')
+  //   .transition()
+  //   .duration(0)
+  //   .attr('opacity', 0);
 
   svg.select('#madridPolarChart2')
     .classed('noshow', true);

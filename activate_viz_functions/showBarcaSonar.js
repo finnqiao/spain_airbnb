@@ -7,10 +7,10 @@ function showBarcaSonar(svg) {
     .on('mouseleave', null)
     .attr('opacity',0);
 
-  svg.selectAll('.label_text,.chart_labels,.polar_chart2')
-    .transition()
-    .duration(0)
-    .attr('opacity', 0);
+  // svg.selectAll('.label_text,.chart_labels,.polar_chart2')
+  //   .transition()
+  //   .duration(0)
+  //   .attr('opacity', 0);
 
   svg.select('#barcaPolarChart2')
     .classed('noshow', true);

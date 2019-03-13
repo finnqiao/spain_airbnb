@@ -76,13 +76,13 @@ function showMadridPolarChart2(svg) {
   svg.select('#madridPolarChart2')
     .classed('noshow', false);
 
-  svg.selectAll('.label_text,.chart_labels,.polar_chart2')
-    .transition()
-    .duration(100)
-    .delay(function(d, i) {
-      return i * 150;
-    })
-    .attr('opacity', 1);
+  // svg.selectAll('.label_text,.chart_labels,.polar_chart2')
+  //   .transition()
+  //   .duration(100)
+  //   .delay(function(d, i) {
+  //     return i * 150;
+  //   })
+  //   .attr('opacity', 1);
 
   svg.select('#madridPolarChart2')
     .selectAll('.price_fan')

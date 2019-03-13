@@ -6,10 +6,10 @@ function showMadridSub1(svg) {
     .on('mouseleave', null)
     .attr('opacity',0);
 
-  svg.selectAll('.label_text,.chart_labels,.polar_chartMad2')
-    .transition()
-    .duration(0)
-    .attr('opacity', 0);
+  // svg.selectAll('.label_text,.chart_labels,.polar_chartMad2')
+  //   .transition()
+  //   .duration(0)
+  //   .attr('opacity', 0);
 
   svg.select('#madridPolarChart2')
     .classed('noshow', true);
@@ -96,8 +96,20 @@ function showMadridSub1(svg) {
   svg.select('#madridSub')
     .classed('noshow', false);
 
-  svg.select('#madridSub').selectAll('path')
+  svg.select('#madridSub')
+    .selectAll('path')
     .transition()
-    .duration(600)
+    .duration(800)
     .attr('opacity', 1);
+
+  svg.selectAll('#madridSub')
+    .selectAll('path')
+    .filter(function() {
+      return !d3.select(this).attr('class').includes('madL1')
+        && !d3.select(this).attr('class').includes('madL10');
+    })
+    .transition()
+    .duration(800)
+    .delay(5000)
+    .attr('opacity', .2);
 }

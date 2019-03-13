@@ -55,10 +55,10 @@ function showMadridEvents(svg) {
     .on('mouseleave', null)
     .attr('opacity',0);
 
-  svg.selectAll('.label_text,.chart_labels,.polar_chart1')
-    .transition()
-    .duration(0)
-    .attr('opacity', 0);
+  // svg.selectAll('.label_text,.chart_labels,.polar_chart1')
+  //   .transition()
+  //   .duration(0)
+  //   .attr('opacity', 0);
 
   svg.select('#madridPolarChart1')
     .classed('noshow', true);
@@ -93,8 +93,10 @@ function showMadridEvents(svg) {
     var cy = transform.substring(comma + 1, transform.length - 1);
 
     var divWidth = (width - cx);
+    var left = (d3.event.pageX) + 'px';
     if (divWidth < 400) {
       divWidth = 400;
+      left = ((d3.event.pageX) - 400) + 'px';
     }
     div.style('width', divWidth + 'px');
 
@@ -136,7 +138,7 @@ function showMadridEvents(svg) {
         setTimeout(showSlides, 2000); // Change image every 2 seconds
       }
 
-    div.style('left', (d3.event.pageX) + 'px')
+    div.style('left', left)
       // .style('top', ((d3.event.pageY - cy + height) - ((height - $('#tooltipDiv').height()) * .5) - $('#tooltipDiv').height()) + 'px');
       .style('top', (d3.event.pageY - cy - 70 + (height * .1)) + 'px');
 

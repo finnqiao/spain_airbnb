@@ -79,11 +79,11 @@ function showBarcaPolarChart1(svg) {
     .duration(500)
     .attr('opacity',1);
 
-  svg.selectAll('.label_text,.chart_labels,.polar_chart1')
-    .transition()
-    .duration(100)
-    .delay(function(d, i) {
-      return i * 350;
-    })
-    .attr('opacity', .8);
+  // svg.selectAll('.label_text,.chart_labels,.polar_chart1')
+  //   .transition()
+  //   .duration(100)
+  //   .delay(function(d, i) {
+  //     return i * 350;
+  //   })
+  //   .attr('opacity', .8);
 }

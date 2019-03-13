@@ -2,6 +2,12 @@ function showMadridTooltips(svg) {
   var iconWidth = 30;
   var iconHeight = 30;
   var tooltipOffset = 70;
+
+  svg.select('#madridMap')
+      .selectAll('Path')
+      .transition()
+      .duration(0)
+      .attr('d', svg.madPathZoom);
   
   // Hide madrid landmarks
   svg.select('#madridLandmarks')

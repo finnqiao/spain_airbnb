@@ -112,6 +112,6 @@ function showMadridSub2(svg) {
     })
     .transition()
     .duration(800)
-    .delay(800)
-    .attr('opacity', 0);
+    .delay(5000)
+    .attr('opacity', .2);
 }

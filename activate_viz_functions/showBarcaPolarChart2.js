@@ -61,7 +61,7 @@ function showBarcaPolarChart2(svg) {
 
   svg.select('#barcaSlider2')
     .transition()
-    .duration(400)
+    .duration(100)
     .attr('opacity', 0);
 
 
@@ -76,13 +76,13 @@ function showBarcaPolarChart2(svg) {
   svg.select('#barcaPolarChart2')
     .classed('noshow', false);
 
-  svg.selectAll('.label_text,.chart_labels,.polar_chart2')
-    .transition()
-    .duration(100)
-    .delay(function(d, i) {
-      return i * 150;
-    })
-    .attr('opacity', 1);
+  // svg.selectAll('.label_text,.chart_labels,.polar_chart2')
+  //   .transition()
+  //   .duration(100)
+  //   .delay(function(d, i) {
+  //     return i * 150;
+  //   })
+  //   .attr('opacity', 1);
 
   svg.select('#barcaPolarChart2')
     .selectAll('.price_fan')
