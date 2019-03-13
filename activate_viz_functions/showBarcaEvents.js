@@ -5,47 +5,79 @@ function showBarcaEvents(svg) {
   // Hide landmarks
   svg.select('#barcaLandmarks').selectAll('.mark')
     .transition().duration(0)
-    .attr('opacity', 1)
+    .attr('opacity', 0)
     .attr('width', 0)
-    .attr('height', 0)
+    .attr('height', 0);
 
   svg.select('#barcaLandmarks')
     .classed('noshow', true);
 
-  // Hide slider
-  svg.select('#barcaSlider')
+  // Hide barca heatmap
+  var div = d3.select('#tooltipDiv');
+
+  svg.select('#barcaMap')
+    .classed('noshow', false);
+
+  svg.select('#barcaMap')
+    .selectAll('path')
+    .on('click',  null)
+    .on('mouseenter', function(d) {
+      d3.select(this)
+        .attr('opacity', .6);
+
+      div.style('width', '120px');
+
+      div.transition()
+        .duration(200)
+        .style('opacity', .9);
+
+      div.html('<b>Neighborhood:</b><br/>' +
+        d.neighbourhood + '<br/>')
+        .style('left', (d3.event.pageX) + 'px')
+        .style('top', (d3.event.pageY) + 'px');
+    })
+    .on('mouseleave', function() {
+      d3.select(this)
+        .attr('opacity', 1);
+
+      div.transition()
+        .duration(500)
+        .style('opacity', 0);
+    })
+    .transition().duration(0)
+    .attr('fill', '#00838f')
+    .attr('opacity', 1);
+
+  // Hide polar chart 1
+  svg.select('#barcaPolarChart1')
+    .selectAll('.price_fan')
+    .on('mouseenter', null)
+    .on('mouseleave', null)
+    .attr('opacity',0);
+
+  svg.selectAll('.label_text,.chart_labels,.polar_chart1')
     .transition()
     .duration(0)
     .attr('opacity', 0);
 
-  svg.select('#barcaSlider')
+  svg.select('#barcaPolarChart1')
     .classed('noshow', true);
 
-  // Hide circles
-  svg.select('#barcaCircles').selectAll('.centroid')
-    .transition()
-    .duration(300)
-    .attr('r', 0)
-    .attr('opacity', .4);
-
-  svg.select('#barcaCircles')
-    .classed('noshow', true);
-
-  // Show event cirles
+  // Show event images
   var tooltipOffset = 70;
   var iconHeight = 40;
   var iconWidth = 40;
 
   svg.select('#barcaEvents')
     .classed('noshow', false);
-  var ttCircles = svg.select('#barcaEvents')
+  var events = svg.select('#barcaEvents')
     .selectAll('.mark');
-  var div = d3.select('#tooltipDiv')
+  var div = d3.select('#tooltipDiv');
   // div.classed('noshow', false);
 
-  ttCircles.transition()
+  events.transition()
     .duration(0)
-    .attr('opacity', .8)
+    .attr('opacity', .9)
     .transition()
     .ease(d3.easeElastic)
     .delay((d,i) => 300*i)
@@ -53,7 +85,7 @@ function showBarcaEvents(svg) {
     .attr('width',iconWidth)
     .attr('height',iconHeight);
 
-  ttCircles.on('mouseenter', function(d) {
+  events.on('mouseenter', function(d) {
     var transform = d3.select(this).attr('transform');
     var comma = transform.indexOf(',');
 
@@ -75,9 +107,9 @@ function showBarcaEvents(svg) {
       d.Description + '<br/><br/>' +
       d.Description2 + '<br/><br/>' + 
       '<b>Attended By: </b>' + d.AttendedBy + '<br/><br/>' +
-      '<img class = "mySlides" src = ' + d.imageLink1 + ' width=300>' +
-      '<img class = "mySlides" src = ' + d.imageLink2 + ' width=300 style="display:none">' + 
-      '<img class = "mySlides" src = ' + d.imageLink3 + ' width=300 style="display:none">'
+      '<img class = "mySlides" src = ' + d.imageLink1 + ' width=300 style="padding-left: ' + ((width - cx) - 300) * .5 + 'px">' +
+      '<img class = "mySlides" src = ' + d.imageLink2 + ' width=300 style="display: none;padding-left: ' + ((width - cx) - 300) * .5 + 'px">' + 
+      '<img class = "mySlides" src = ' + d.imageLink3 + ' width=300 style="display: none;padding-left: ' + ((width - cx) - 300) * .5 + 'px">'
       )
 
       var slideIndex = 1;
@@ -95,14 +127,17 @@ function showBarcaEvents(svg) {
             slides[i].style.display = 'none'; 
         }
         slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1} 
-        slides[slideIndex-1].style.display = 'block'; 
+        if (slideIndex > slides.length) {slideIndex = 1}
+        if (slides[slideIndex-1]) {
+          slides[slideIndex-1].style.display = 'block';
+          slides[slideIndex-1].style.paddingLeft = (((width - cx) - 300) * .5) + 'px';
+        }; 
         setTimeout(showSlides, 2000); // Change image every 2 seconds
       }
 
     div.style('left', (d3.event.pageX) + 'px')
       // .style('top', ((d3.event.pageY - cy + height) - ((height - $('#tooltipDiv').height()) * .5) - $('#tooltipDiv').height()) + 'px');
-      .style('top', (d3.event.pageY - cy + (height * .1)) + 'px');
+      .style('top', (d3.event.pageY - cy - 70 + (height * .1)) + 'px');
 
   })
   .on('mouseleave', function() {

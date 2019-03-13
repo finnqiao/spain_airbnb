@@ -1,4 +1,4 @@
-function showTitle(svg) {
+function showBackground(svg) {
   // Hide barcelona map
   svg.select('#barcaMap').selectAll('path')
     .on('mouseenter', null)
@@ -8,10 +8,10 @@ function showTitle(svg) {
     .attr('opacity', 0);
 
     // Show title
-  svg.select('#titleSection')
+  svg.select('#backgroundSection')
     .classed('noshow', false);
 
-  svg.select('#titleSection').selectAll('text')
+  svg.select('#backgroundSection').selectAll('text')
     .transition()
     .duration(600)
     .attr('opacity', 1.0);

@@ -9,6 +9,7 @@ function createBarcaEvents(barEvents, barProj, svg) {
     .data(barEvents)
     .enter()
     .append('svg:image')
+    .attr('id', function(d) { return d.Html_ID; })
     .attr('class','mark')
     .attr('width', 0)
     .attr('height', 0)

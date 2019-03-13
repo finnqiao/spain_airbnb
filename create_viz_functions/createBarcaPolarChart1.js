@@ -12,7 +12,7 @@ function createBarcaPolarChart1(barPolarChart, width, height, svg) {
     .range([0,Math.PI * 2]);
 
   var scaleColor = d3.scaleLinear()
-    .range(['yellow','steelblue']);
+    .range(['white','red']);
 
   var arcs = d3.arc()
     .outerRadius(minInnerRadius+1)
@@ -73,7 +73,7 @@ function createBarcaPolarChart1(barPolarChart, width, height, svg) {
 
   function draw_labels(start, end, svg){
 
-    svg.selectAll('.chart_labels').remove();
+    // svg.selectAll('.chart_labels').remove();
 
     var outer_text = d3.radialLine()
       .curve(d3.curveCardinal)
@@ -85,86 +85,63 @@ function createBarcaPolarChart1(barPolarChart, width, height, svg) {
       .attr('id', 'barcaPolarChart1')
       .attr('transform', 'translate(' + (width * .5) + ',' + (height * .5) + ')')
 
-    var labels = polarChart.select('#Outer_Labels1')
+    polarChart.append('path')
       .datum(points(new Date(start.getTime()-43200000),new Date(end.getTime()+43200000),3600*4))
-      .enter().append('path')
       .attr('class','chart_labels')
       .attr('id','Outer_Labels1')
       .attr('d',outer_text)
       .style('fill','none')
       .style('stroke','none');
 
-    console.log(labels)  
-    test = points(new Date(start.getTime()-43200000),new Date(end.getTime()+43200000),3600*4)
-
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
       .attr('xlink:href', '#Outer_Labels1') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('class','label_text chart_labels polar_chart1')
       .attr('id','Start')
       .style('text-anchor','start')
       .attr('startOffset', '0.25%')
       .attr('opacity',0)
-      .text(formatDate(start))
-      .transition()
-      .attr('opacity',1)
-      // .duration(400)
+      .text(formatDate(start));
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
       .attr('xlink:href', '#Outer_Labels1') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('class','label_text chart_labels polar_chart1')
       .attr('id','Quad1')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '25%')
       .attr('opacity',0)
-      .text(formatDateShort(new Date((end.getTime()-start.getTime())/4 + start.getTime())))
-      .transition()
-      .attr('opacity',1)
-      // .delay(400)
-      // .duration(400);
+      .text(formatDateShort(new Date((end.getTime()-start.getTime())/4 + start.getTime())));
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
       .attr('xlink:href', '#Outer_Labels1') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('class','label_text chart_labels polar_chart1')
       .attr('id','Quad2')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '50%')
       .attr('opacity',0)
-      .text(formatDateShort(new Date((end.getTime()-start.getTime())/2 + start.getTime())))
-      .transition()
-      .attr('opacity',1)
-      // .delay(800)
-      // .duration(400);
+      .text(formatDateShort(new Date((end.getTime()-start.getTime())/2 + start.getTime())));
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
       .attr('xlink:href', '#Outer_Labels1') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('class','label_text chart_labels polar_chart1')
       .attr('id','Quad3')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '75%')
       .attr('opacity',0)
-      .text(formatDateShort(new Date(3*(end.getTime()-start.getTime())/4 + start.getTime())))
-      .transition()
-      .attr('opacity',1)
-      // .delay(1200)
-      // .duration(400);
+      .text(formatDateShort(new Date(3*(end.getTime()-start.getTime())/4 + start.getTime())));
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
       .attr('xlink:href', '#Outer_Labels1') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('class','label_text chart_labels polar_chart1')
       .attr('id','End')
       .style('text-anchor','end')
       .attr('startOffset', '99.75%')
       .attr('opacity',0)
-      .text(formatDateShort(end))
-      .transition()
-      .attr('opacity',1)
-      // .delay(1600)
-      // .duration(400);
+      .text(formatDateShort(end));
   }
 
   function draw_polar_fans(data, svg){

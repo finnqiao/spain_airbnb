@@ -12,7 +12,7 @@ function createBarcaPolarChart2(barPolarChart, width, height, svg) {
     .range([0,Math.PI * 2]);
 
   var scaleColor = d3.scaleLinear()
-    .range(['yellow','steelblue']);
+    .range(['white','red']);
 
   var arcs = d3.arc()
     .outerRadius(minInnerRadius+1)
@@ -73,7 +73,7 @@ function createBarcaPolarChart2(barPolarChart, width, height, svg) {
 
   function draw_labels(start, end, svg){
 
-    svg.selectAll('.chart_labels').remove();
+    // svg.selectAll('.chart_labels').remove();
 
     var outer_text = d3.radialLine()
       .curve(d3.curveCardinal)
@@ -88,15 +88,15 @@ function createBarcaPolarChart2(barPolarChart, width, height, svg) {
     polarChart.append('path')
       .datum(points(new Date(start.getTime()-43200000),new Date(end.getTime()+43200000),3600*4))
       .attr('class','chart_labels')
-      .attr('id','Outer_Labels')
+      .attr('id','Outer_Labels2')
       .attr('d',outer_text)
       .style('fill','none')
       .style('stroke','none');
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
-      .attr('xlink:href', '#Outer_Labels') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('xlink:href', '#Outer_Labels2') //place the ID of the path here
+      .attr('class','label_text chart_labels polar_chart2')
       .attr('id','Start')
       .style('text-anchor','start')
       .attr('startOffset', '0.25%')
@@ -108,8 +108,8 @@ function createBarcaPolarChart2(barPolarChart, width, height, svg) {
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
-      .attr('xlink:href', '#Outer_Labels') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('xlink:href', '#Outer_Labels2') //place the ID of the path here
+      .attr('class','label_text chart_labels polar_chart2')
       .attr('id','Quad1')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '25%')
@@ -122,8 +122,8 @@ function createBarcaPolarChart2(barPolarChart, width, height, svg) {
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
-      .attr('xlink:href', '#Outer_Labels') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('xlink:href', '#Outer_Labels2') //place the ID of the path here
+      .attr('class','label_text chart_labels polar_chart2')
       .attr('id','Quad2')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '50%')
@@ -136,8 +136,8 @@ function createBarcaPolarChart2(barPolarChart, width, height, svg) {
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
-      .attr('xlink:href', '#Outer_Labels') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('xlink:href', '#Outer_Labels2') //place the ID of the path here
+      .attr('class','label_text chart_labels polar_chart2')
       .attr('id','Quad3')
       .style('text-anchor','middle') //place the text halfway on the arc
       .attr('startOffset', '75%')
@@ -150,8 +150,8 @@ function createBarcaPolarChart2(barPolarChart, width, height, svg) {
 
     polarChart.append('text')
       .append('textPath') //append a textPath to the text element
-      .attr('xlink:href', '#Outer_Labels') //place the ID of the path here
-      .attr('class','label_text chart_labels')
+      .attr('xlink:href', '#Outer_Labels2') //place the ID of the path here
+      .attr('class','label_text chart_labels polar_chart2')
       .attr('id','End')
       .style('text-anchor','end')
       .attr('startOffset', '99.75%')

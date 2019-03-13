@@ -5,20 +5,9 @@ function createBarcaTooltips(barTooltips, barProj, svg) {
   svg.select('#barcaVis')
     .append('g')
     .attr('id', 'barcaTooltips')
-    .selectAll('.tt')
+    .selectAll('.mark')
     .data(barTooltips)
     .enter()
-    // .append('circle')
-    // .attr('class', 'tooltipCircle')
-    // .attr('r', 7)
-    // .style('fill', '#d5ad36')
-    // .style('stroke', '#56B4EF')
-    // .attr('cx', function(d) {
-    //   return barProj([d.long, d.lat])[0];
-    // })
-    // .attr('cy', function(d) {
-    //   return barProj([d.long, d.lat])[1];
-    // })
     .append('svg:image')
     .attr('class','mark')
     .attr('width', 0)
